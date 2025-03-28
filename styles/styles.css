@@ -43,7 +43,8 @@ body {
     font-size: 14px;
     border: none;
     border-radius: 20px;
-    background-color: #f0f0f0;
+    background-color:#F2F2F2;
+    ;
 }
 
 .search-icon {
@@ -59,16 +60,16 @@ body {
 main{
     width: 100%;
     display: flex;
-    background-color: #f0f0f0;
+    background-color:#F6F6F6;
 }
 .card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px;
-    max-width: 1440px;
-    margin: 0 auto;
-    width: 100%;
+    margin: 50px auto;
+    width: 1264px;
+    height: 960px;
 }
 
 .card {
@@ -106,22 +107,86 @@ main{
 .card-texts {
     width: 100%;
     height: 50px;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .card-texts .title {
     font-size: 28px;
     height: 18px;
     width: 100%;
-    margin-bottom: 5px;
-    font-weight: bold;
-    text-align: left;
+    text-align: center;
 }
 
 .card-texts .subtitle {
     font-size: 16px;
     height: 17px;
-    width: 139px;
-    color: #666;
-    text-align: left;
+    width: 100%;
+    text-align: center;
+}
+
+.price-tag {
+    position: relative;
+    width: 182.8385px;
+    height: 161.7411px;
+    top: -57.24px;
+    left: -48.43px;
+    background-color: #FFFFFF;
+    transform: rotate(-0.74deg);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.price-text {
+    position: absolute;
+    width: 87.7824px;
+    height: 161.0809px;
+    top: -17.24px;
+    left: 38.27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.interactions {
+    position: relative;
+    width: 24px;
+    height: 104px;
+    top: 32px;
+    left: 356px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.likes, .shares {
+    width: 24px;
+    height: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.like-icon, .share-icon {  
+    background-size: cover;
+    pointer-events: visible;
+}
+
+.like-icon {
+    background-image: url('../icons/like.svg');
+    width: 22px;
+    height: 21px;
+}
+
+.share-icon {
+    background-image: url('../icons/share.svg');
+    width: 29px;
+    height: 25px;
+}
+
+.like-count, .share-count {
+    font-size: 14px;
+    color: #333;
 }
