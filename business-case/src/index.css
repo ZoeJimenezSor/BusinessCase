@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.main-header {
+  width: 100%; 
+  height: 120px;
+  display: flex;
+  justify-content: center; 
+}
+
+.header-content {
+  width: 1440px; 
+  position: relative;
+}
+
+.logo {
+  width: 138.53px;
+  height: 24px;
+  position: absolute;
+  top: 48px;
+  left: 80px;
+}
+
+.search-container {
+  position: absolute;
+  top: 45px;
+  left: 1090px;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 270px;
+  height: 30px;
+  padding: 5px 10px 5px 35px; 
+  font-size: 14px;
+  border: none;
+  border-radius: 20px;
+  background-color:#F2F2F2;
+  ;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  width: 16px;
+  height: 16px;
+  background-image: url('../public/search.svg');
+  background-size: cover;
+  pointer-events: none; 
+}
+
+main{
+  width: 100%;
+  display: flex;
+  background-color:#F6F6F6;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 50px auto;
+  width: 1264px;
+  height: 960px;
+}
+
+.card {
+  width: 400px;
+  height: 460px;
+  border: 1px solid #D3D3D3;
+  overflow: hidden;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image {
+  width: 400px;
+  height: 360px;
+  background-color: #ddd;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-details {
+  width: 400px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  background-color: #fff;
+}
+
+.card-texts {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-texts .title {
+  font-size: 28px;
+  height: 18px;
+  width: 100%;
+  text-align: center;
+}
+
+.card-texts .subtitle {
+  font-size: 16px;
+  height: 17px;
+  width: 100%;
+  text-align: center;
+}
+
+.price-tag {
+  position: relative;
+  width: 182.8385px;
+  height: 161.7411px;
+  top: -400.24px;
+  left: -46.43px;
+  background-color: #FFFFFF;
+  transform: rotate(-0.74deg);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.price-text {
+  position: absolute;
+  width: 87.7824px;
+  height: 161.0809px;
+  top: -17.24px;
+  left: 38.27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.interactions {
+  position: relative;
+  width: 24px;
+  height: 104px;
+  top: -320px;
+  left: 356px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.likes, .shares {
+  width: 24px;
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.like-icon, .share-icon {  
+  background-size: cover;
+  pointer-events: visible;
+}
+
+.like-icon {
+  width: 22px;
+  height: 21px;
+}
+
+.share-icon {
+  background-image: url('../public/share.svg');
+  width: 29px;
+  height: 25px;
+}
+
+.like-count, .share-count {
+  font-size: 14px;
+  color: white
+}
