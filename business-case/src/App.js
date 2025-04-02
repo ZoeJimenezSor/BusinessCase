@@ -1,49 +1,9 @@
 import React, { useEffect, useState } from "react";
-import './App.css'; // Asegúrate de tener tus estilos en el archivo CSS
 
 const App = () => {
   const [images, setImages] = useState([]);
   const [error, setError] = useState(null);
   const [searchTitle, setSearchTitle] = useState("");
-
-  const data = [
-    {
-        title: "COLLECTION",
-        subtitle: "underground",
-        price: "28€",
-        image: "https://via.placeholder.com/400x360"
-    },
-    {
-        title: "COOL HAT",
-        subtitle: "Stylefresh",
-        price: "30€",
-        image: "https://via.placeholder.com/400x360"
-    },
-    {
-        title: "ART BOOK",
-        subtitle: "brush",
-        price: "28€",
-        image: "https://via.placeholder.com/400x360"
-    },
-    {
-        title: "COLLECTION",
-        subtitle: "underground",
-        price: "28€",
-        image: "https://via.placeholder.com/400x360"
-    },
-    {
-        title: "COLLECTION",
-        subtitle: "underground",
-        price: "28€",
-        image: "https://via.placeholder.com/400x360"
-    },
-    {
-        title: "COLLECTION",
-        subtitle: "underground",
-        price: "28€",
-        image: "https://via.placeholder.com/400x360"
-    }
-];
 
 const query = `
   query Images($title: String) {
@@ -80,18 +40,17 @@ const query = `
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer YOUR_API_KEY", // Sustituye con tu token
         },
         body: JSON.stringify({
           query: query,
           variables: {
-            title: title || null, // Pasamos el título como variable
+            title: title || null,
           },
         }),
       });
 
       const json = await response.json();
-      setImages(json.data.images.nodes); // Guardar las imágenes en el estado
+      setImages(json.data.images.nodes); 
     } catch (error) {
       setError("Error fetching images");
       console.error("Error fetching images:", error);
@@ -145,7 +104,7 @@ const query = `
       {/* Header */}
       <header className="main-header">
         <div className="header-content">
-          <img src="logo.png" alt="Logo" className="logo" />
+          <img src="https://elreferente.es/wp-content/uploads/2021/04/SAMY.png" alt="Logo" className="logo" />
           <div className="search-container">
           <input
               type="text"
@@ -190,7 +149,7 @@ const query = `
                       </div>
                       <div className="shares">
                         <span className="share-icon"></span>
-                        <span className="share-count">45</span>
+                        <span className="share-count">0</span>
                       </div>
                     </div>
                 </div>
@@ -202,6 +161,25 @@ const query = `
                       { item.author}
                     </div>
                   </div>
+                </div>
+                <div className="interactions-mobile">
+                <div className="interaction-column">
+                  <span
+                    className="like-icon"
+                    style={{
+                      backgroundImage: `url(${item.liked ? '/like.svg' : '/dislike.svg'})`,
+                      cursor: 'pointer',
+                    }}
+                    onClick={() => likeImage(item.id)} 
+                  />
+                  <span className="like-count">{item.likesCount}</span>
+                </div>
+
+                {/* Columna de Shares */}
+                <div className="interaction-column">
+                  <span className="share-icon"></span>
+                  <span className="share-count">0</span>
+                </div>
                 </div>
               </div>
             ))
